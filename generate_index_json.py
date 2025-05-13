@@ -3,7 +3,7 @@ import json
 import yaml  # ✅ PyYAML 필요
 from datetime import date, datetime
 
-posts_dir = "./posts/"
+posts_dir = "posts/"
 index_json_path = "posts/index.json"
 
 post_entries = []
