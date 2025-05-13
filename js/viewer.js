@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 📄 1. 본문 로딩
-  fetch('../posts' + file)
+  fetch('../posts/' + file)
     .then(res => {
       if (!res.ok) throw new Error("파일을 찾을 수 없습니다.");
       return res.text();
