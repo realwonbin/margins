@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  fetch('./index.json')
+  fetch('../index.json')
     .then(res => res.json())
     .then(posts => {
       const post = posts.find(p => p.file === file);
