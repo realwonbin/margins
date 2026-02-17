@@ -9,4 +9,4 @@
 
 * 오류 - 필사본을 스캔, 친필본이 아니었음
   
-<a herf="https://episodearth.synology.me/margins/KimGu.ttf">서체 링크</a>
+[서체 다운로드](https://episodearth.synology.me/margins/KimGu.ttf)

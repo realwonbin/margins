@@ -24,19 +24,19 @@
     "tags": ["포트폴리오", "작업노트", "2009", "sketch"]
   },
   {
-    "file": "cheap.md",
-    "title": "값싼 시계",
-    "category": "essay",
-    "date": "2025-00-00",
-    "location": "시계탑 작업노트",
-    "tags": ["포트폴리오", "작업노트", "2025", "essay"]
-  },
-  {
     "file": "flower.md",
     "title": "우리는 꽃을 심을 수 있는 자유가 있다",
     "category": "note",
     "date": "2008-00-00",
     "location": "디지털 서체 제작, Everyday is not the same, 상해",
     "tags": ["포트폴리오", "작업노트", "2025"]
+  },
+  {
+    "file": "cheap.md",
+    "title": "값싼 시계",
+    "category": "essay",
+    "date": "2025-00-00",
+    "location": "시계탑 작업노트",
+    "tags": ["포트폴리오", "작업노트", "2025", "essay"]
   }
 ]
