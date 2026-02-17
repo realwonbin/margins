@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "highway.md",
+                "file": "posts/fragment.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "highway"
+              "title": "fragment"
             }
           }
         ]
@@ -185,7 +185,10 @@
   },
   "active": "b4910e6734958322",
   "lastOpenFiles": [
+    "posts/clock.md",
+    "posts/closer.md",
+    "highway.md",
     "moon-jar.md",
-    "highway.md"
+    "posts/fragment.md"
   ]
 }
