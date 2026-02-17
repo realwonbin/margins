@@ -1,12 +1,5 @@
 [
-  {
-    "file": "fragment.md",
-    "title": "파편",
-    "category": "note", 
-    "date": "2009-00-00",
-    "location": "<보이지 않는 당신> 도록",
-    "tags": ["2009", "sketch", "note"]
-  },
+  
   {
     "file": "closer.md",
     "title": "가까운 것들은 가장 멀리 있다",
@@ -14,6 +7,31 @@
     "date": "2025-00-00",
     "location": "포트폴리오 사이트",
     "tags": ["2025", "포트폴리오", "essay"]
+  },
+   
+  {
+    "file": "cheap.md",
+    "title": "값싼 시계",
+    "category": "essay",
+    "date": "2018, 2025",
+    "location": "시계탑 작업노트",
+    "tags": ["2018", "2025", "essay"]
+  },
+  {
+    "file": "firefly.md",
+    "title": "반딧불이",
+    "category": "essay",
+    "date": "2017-2018",
+    "location": "반딧불이 작업노트",
+    "tags": ["2017", "2018", "essay"]
+  },
+  {
+    "file": "fragment.md",
+    "title": "파편",
+    "category": "note", 
+    "date": "2009-00-00",
+    "location": "<보이지 않는 당신> 도록",
+    "tags": ["2009", "sketch", "note"]
   },
   {
     "file": "clock.md",
@@ -30,21 +48,6 @@
     "date": "2008-00-00",
     "location": "디지털 서체 제작, Everyday is not the same, 상해",
     "tags": ["2008", "note"]
-  },
-  {
-    "file": "cheap.md",
-    "title": "값싼 시계",
-    "category": "essay",
-    "date": "2018, 2025",
-    "location": "시계탑 작업노트",
-    "tags": ["2018", "2025", "essay"]
-  },
-  {
-    "file": "firefly.md",
-    "title": "반딧불이",
-    "category": "essay",
-    "date": "2017-2018",
-    "location": "반딧불이 작업노트",
-    "tags": ["2017", "2018", "essay"]
   }
+  
 ]
