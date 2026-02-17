@@ -8,27 +8,34 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // 경로 주의: 현재 폴더에 있는 index.json을 참조합니다.
+  // 1. 목록 파일 읽기
   fetch('./index.json')
     .then(res => {
       if (!res.ok) throw new Error("index.json을 찾을 수 없습니다.");
       return res.json();
     })
     .then(posts => {
-      const post = posts.find(p => p.file === fileName);
-      if (!post || !post.content) throw new Error("본문 내용이 비어있거나 파일을 찾을 수 없습니다.");
+      const postMeta = posts.find(p => p.file === fileName);
+      if (!postMeta) throw new Error("목록에서 해당 정보를 찾을 수 없습니다.");
 
+      // 2. posts 폴더 안의 실제 마크다운 파일 읽기 (중요: 경로 수정)
+      return fetch(`./posts/${fileName}`).then(res => {
+        if (!res.ok) throw new Error(`posts/${fileName} 파일을 찾을 수 없습니다.`);
+        return res.text().then(mdText => ({ postMeta, mdText, posts }));
+      });
+    })
+    .then(({ postMeta, mdText, posts }) => {
       // 마크다운 변환 및 출력
       marked.setOptions({ breaks: true });
-      const dateLine = post.date + (post.location ? ` · ${post.location}` : '');
+      const dateLine = postMeta.date + (postMeta.location ? ` · ${postMeta.location}` : '');
 
       content.innerHTML = `
-        <h1 class="post-title">${post.title}</h1>
+        <h1 class="post-title">${postMeta.title}</h1>
         <div class="post-meta">${dateLine}</div>
-        <div class="post-body">${marked.parse(post.content)}</div>
+        <div class="post-body">${marked.parse(mdText)}</div>
       `;
 
-      // 네비게이션 (이전/다음)
+      // 이전/다음 네비게이션
       const idx = posts.findIndex(p => p.file === fileName);
       const prev = posts[idx + 1];
       const next = posts[idx - 1];
