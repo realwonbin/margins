@@ -25,64 +25,49 @@
   </div>
   
   <script>
-    fetch('index.json')
-  .then(res => res.json())
-  .then(data => {
-    const ul = document.getElementById('post-list');
-    const tagSet = new Set();
+  // index.json 파일을 불러와서 목록을 만듭니다.
+  fetch('./index.json')
+    .then(res => res.json())
+    .then(data => {
+      const ul = document.getElementById('post-list');
+      const tagSet = new Set();
 
-    data.forEach(post => {
-      const li = document.createElement('li');
-      li.className = 'post-item';
-      li.dataset.tags = (post.tags || []).join(',');
+      data.forEach(post => {
+        const li = document.createElement('li');
+        li.className = 'post-item';
+        li.dataset.tags = (post.tags || []).join(',');
 
-      // ✅ 태그를 #형태로 가공
-      const tagsHtml = (post.tags || []).map(tag => `#${tag}`).join(' ');
-      const tagInlineHTML = tagsHtml ? `<div class="tag-inline">${tagsHtml}</div>` : '';
-
-      if (post.type === "link") {
+        // 목록 생성: viewer.html로 연결
         li.innerHTML = `
           <div class="post-line">
             <span class="post-date">${post.date}</span>
             <span class="post-separator">≫</span>
-            <a class="post-title" href="${post.url}" target="_blank">${post.title}</a>
+            <a class="post-title" href="viewer.html?file=${encodeURIComponent(post.file)}">${post.title}</a>
           </div>
         `;
-      } else {
-        li.innerHTML = `
-            <div class="post-line">
-            <span class="post-date">${post.date}</span>
-            <span class="post-separator">≫</span>
-            <a class="post-title" href="viewer.html?file=${encodeURIComponent(post.file)}">${post.title}</a>
-            </div>
-        `;
-      }
 
-      (post.tags || []).forEach(tag => tagSet.add(tag));
-      ul.appendChild(li);
-    });
-
-    // ✅ 필터 버튼 생성
-    const tagFilters = document.getElementById('tag-filters');
-    tagSet.forEach(tag => {
-      const btn = document.createElement('button');
-      btn.textContent = `#${tag}`;
-      btn.className = 'tag-button';
-      btn.dataset.tag = tag;
-      tagFilters.appendChild(btn);
-    });
-
-    // ✅ 필터 클릭 이벤트
-    tagFilters.addEventListener('click', e => {
-      if (e.target.tagName !== 'BUTTON') return;
-      const selectedTag = e.target.dataset.tag.replace('#', ''); // ← #제거
-      document.querySelectorAll('#post-list li').forEach(li => {
-        const tags = li.dataset.tags?.split(',') || [];
-        li.style.display = tags.includes(selectedTag) ? 'block' : 'none';
+        (post.tags || []).forEach(tag => tagSet.add(tag));
+        ul.appendChild(li);
       });
-    });
-  });
 
-  </script>
+      // 태그 필터 버튼 생성
+      const tagFilters = document.getElementById('tag-filters');
+      tagSet.forEach(tag => {
+        const btn = document.createElement('button');
+        btn.textContent = `#${tag}`;
+        btn.className = 'tag-button';
+        btn.onclick = () => filterByTag(tag);
+        tagFilters.appendChild(btn);
+      });
+    })
+    .catch(err => console.error("목록 로딩 실패:", err));
+
+  function filterByTag(selectedTag) {
+    document.querySelectorAll('#post-list li').forEach(li => {
+      const tags = li.dataset.tags.split(',');
+      li.style.display = tags.includes(selectedTag) ? 'block' : 'none';
+    });
+  }
+</script>
 </body>
 </html>

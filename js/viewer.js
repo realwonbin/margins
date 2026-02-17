@@ -4,21 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById('content');
 
   if (!fileName) {
-    content.innerHTML = "<p>게시물을 지정하지 않았습니다.</p>";
+    content.innerHTML = "<p>게시물이 지정되지 않았습니다.</p>";
     return;
   }
 
-  // 1. 현재 폴더에 있는 index.json을 불러옴
+  // 경로 주의: 현재 폴더에 있는 index.json을 참조합니다.
   fetch('./index.json')
     .then(res => {
-      if (!res.ok) throw new Error("index.json 파일을 찾을 수 없습니다.");
+      if (!res.ok) throw new Error("index.json을 찾을 수 없습니다.");
       return res.json();
     })
     .then(posts => {
       const post = posts.find(p => p.file === fileName);
-      if (!post) throw new Error("목록에서 해당 파일을 찾을 수 없습니다.");
+      if (!post || !post.content) throw new Error("본문 내용이 비어있거나 파일을 찾을 수 없습니다.");
 
-      // 2. 이미 index.json 안에 content 내용이 들어있으므로 바로 출력
+      // 마크다운 변환 및 출력
       marked.setOptions({ breaks: true });
       const dateLine = post.date + (post.location ? ` · ${post.location}` : '');
 
@@ -28,16 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="post-body">${marked.parse(post.content)}</div>
       `;
 
-      // 3. 이전/다음 네비게이션 생성
-      const currentIndex = posts.findIndex(p => p.file === fileName);
-      const prev = posts[currentIndex + 1];
-      const next = posts[currentIndex - 1];
+      // 네비게이션 (이전/다음)
+      const idx = posts.findIndex(p => p.file === fileName);
+      const prev = posts[idx + 1];
+      const next = posts[idx - 1];
 
-      let navHTML = '<nav class="post-nav">';
+      let navHTML = '<nav class="post-nav" style="display:flex; justify-content:space-between; margin-top:50px; border-top:1px solid #eee; padding-top:20px;">';
       navHTML += prev ? `<a href="viewer.html?file=${encodeURIComponent(prev.file)}">← ${prev.title}</a>` : '<span></span>';
       navHTML += next ? `<a href="viewer.html?file=${encodeURIComponent(next.file)}">${next.title} →</a>` : '<span></span>';
       navHTML += '</nav>';
-      
       content.innerHTML += navHTML;
     })
     .catch(err => {
