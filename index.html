@@ -37,14 +37,15 @@
         li.className = 'post-item';
         li.dataset.tags = (post.tags || []).join(',');
 
-        // 목록 생성: viewer.html로 연결
+       // ...
         li.innerHTML = `
           <div class="post-line">
-            <span class="post-date">${post.date}</span>
+            <span class="post-category">${post.category || 'Etc'}</span> 
             <span class="post-separator">≫</span>
             <a class="post-title" href="viewer.html?file=${encodeURIComponent(post.file)}">${post.title}</a>
           </div>
         `;
+        // ...
 
         (post.tags || []).forEach(tag => tagSet.add(tag));
         ul.appendChild(li);

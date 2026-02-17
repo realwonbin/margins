@@ -2,6 +2,7 @@
   {
     "file": "moon-jar.md",
     "title": "엉킨 실타래, 달항아리",
+    "category": "Essay", 
     "date": "2025-02-16",
     "location": "없음",
     "tags": ["사유"]
@@ -9,6 +10,7 @@
   {
     "file": "highway.md",
     "title": "고속도로",
+    "category": "Idea",
     "date": "2024-02-08",
     "location": "없음",
     "tags": ["일상"]
