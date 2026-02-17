@@ -38,5 +38,13 @@
     "date": "2025-00-00",
     "location": "시계탑 작업노트",
     "tags": ["2025", "essay"]
+  },
+  {
+    "file": "firefly.md",
+    "title": "반딧불이",
+    "category": "essay",
+    "date": "2025-00-00",
+    "location": "반딧불이 작업노트",
+    "tags": ["2025", "essay"]
   }
 ]
