@@ -8,19 +8,19 @@
     "tags": ["작업노트"]
   },
   {
-    "file": "highway.md",
-    "title": "고속도로",
+    "file": "closer.md",
+    "title": "가까운 것들은 가장 멀리 있다",
+    "category": "essay",
+    "date": "2024-02-08",
+    "location": "없음",
+    "tags": ["포트폴리오", "작업노트", "에세이"]
+  },
+  {
+    "file": "clock.md",
+    "title": "시계의 바늘이 되어 2000-2009",
     "category": "note",
     "date": "2024-02-08",
     "location": "없음",
-    "tags": ["일상"]
-  },
-  {
-    "file": "highway.md",
-    "title": "원주시",
-    "category": "study",
-    "date": "2024-02-08",
-    "location": "없음",
-    "tags": ["일상"]
+    "tags": ["포트폴리오", "작업노트"]
   }
 ]
