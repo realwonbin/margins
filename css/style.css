@@ -94,9 +94,10 @@ small,
 }
 
 .post-separator {
-  font-size: 12px;
-  color: #555;       /* ✅ 더 어두운 회색 */
+  font-size: 10px;
+  color: #ddd;       /* ✅ 더 어두운 회색 */
   font-weight: 400;
+  vertical-align: 1px;
   margin: 0 6px;     /* ✅ 양옆 여백 살짝 추가 */
 }
 
