@@ -8,4 +8,5 @@
 <친필스캔 후 디지털서체제작> 2008. 
 
 * 오류 - 필사본을 스캔, 친필본이 아니었음
+  
 <a herf="https://episodearth.synology.me/margins/KimGu.ttf">서체 링크</a>
