@@ -172,15 +172,15 @@ ul#post-list li a:hover {
   margin-left: 12px;
 }
 .post-category {
-    font-size: 0.85rem;       /* 1. 제목보다 작게 (14px 정도) */
-    color: #999;              /* 2. 흐릿한 회색 (검정색보다 연하게) */
-    font-weight: 400;         /* 3. 두께 얇게 (기본 굵기) */
+    font-size: 0.75rem;        /* 1. 크기를 꽤 많이 줄입니다 (약 12px) */
+    color: #aaa;               /* 2. 회색을 더 연하게 (#999 -> #aaa) */
+    font-weight: 400;          /* 3. 두께는 얇게 유지 */
+    text-transform: lowercase; /* 4. 무조건 소문자로 보여줍니다 (Essay -> essay) */
     
-    /* 아래는 줄 맞춤을 위해 유지 */
-    min-width: 60px;          
+    /* 정렬 유지 */
+    min-width: 60px;           
     display: inline-block;
-    text-transform: uppercase; /* 소문자로 적어도 대문자로 보여줌 (ESSAY, IDEA) */
-    letter-spacing: 0.05em;    /* 자간을 아주 살짝 넓혀서 시원하게 */
+    text-align: right;        
 }
 
 /* === 단일 포스트 보기 === */
