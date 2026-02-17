@@ -5,7 +5,7 @@
     "category": "note", 
     "date": "2009-00-00",
     "location": "<보이지 않는 당신> 도록",
-    "tags": ["작업노트", "2009", "sketch"]
+    "tags": ["2009", "sketch", "note"]
   },
   {
     "file": "closer.md",
@@ -13,7 +13,7 @@
     "category": "essay",
     "date": "2025-00-00",
     "location": "포트폴리오 사이트",
-    "tags": ["포트폴리오", "작업노트", "essay", "2025"]
+    "tags": ["포트폴리오", "essay", "2025"]
   },
   {
     "file": "clock.md",
@@ -21,7 +21,7 @@
     "category": "essay",
     "date": "2009-00-00",
     "location": "<보이지 않는 당신> 도록",
-    "tags": ["포트폴리오", "작업노트", "2009", "sketch"]
+    "tags": ["2009", "sketch", "essay"]
   },
   {
     "file": "flower.md",
@@ -29,7 +29,7 @@
     "category": "note",
     "date": "2008-00-00",
     "location": "디지털 서체 제작, Everyday is not the same, 상해",
-    "tags": ["포트폴리오", "작업노트", "2025"]
+    "tags": ["2025", "note"]
   },
   {
     "file": "cheap.md",
@@ -37,6 +37,6 @@
     "category": "essay",
     "date": "2025-00-00",
     "location": "시계탑 작업노트",
-    "tags": ["포트폴리오", "작업노트", "2025", "essay"]
+    "tags": ["2025", "essay"]
   }
 ]
